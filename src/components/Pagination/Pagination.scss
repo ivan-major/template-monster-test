@@ -1,0 +1,138 @@
+@import "../../style/mixins";
+
+.pagination {
+    margin: 20px 0;
+    padding: 20px;
+
+    border-radius: 20px;
+    background: #e7e7e7;
+
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        padding: 0;
+        margin: 0;
+
+        align-self: center;
+    }
+
+    &__item {
+        display: none;
+
+        &--active {
+            display: flex;
+            gap: 5px;
+        }
+    }
+}
+
+.text {
+    font-size: 16px;
+    color: #020727;
+    font-weight: bold;
+}
+
+.button {
+    border: 1px solid #020727;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 5px 8px;
+
+    &:hover {
+        background-color: #6ba9eb;
+    }
+
+    &__active {
+        background-color: #020727;
+        color: #fff;
+    }
+}
+
+.prev,
+.next {
+    display: block;
+
+    &:disabled {
+        background-color: #e7e7e7;
+        outline: 1px solid #020727;
+        border: none;
+        opacity: 0.7;
+    }
+}
+
+.with-info {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.space {
+    display: inline;
+}
+
+.no_space {
+    display: none;
+}
+
+@include onTablet {
+    .pagination {
+        margin: 30px 0;
+        padding: 30px;
+
+        &__list {
+            gap: 10px;
+        }
+
+        &__item {
+            &--active {
+                gap: 10px;
+            }
+        }
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+
+    .with-info {
+        margin-bottom: 30px;
+    }
+}
+
+@include onDesktop {
+    .pagination {
+        max-width: 1200px;
+        box-sizing: border-box;
+        margin: 40px auto;
+        padding: 40px;
+
+        &__list {
+            gap: 15px;
+        }
+
+        &__item {
+            &--active {
+                gap: 15px;
+            }
+        }
+    }
+
+    .text {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 24px;
+        padding: 10px 15px;
+    }
+}

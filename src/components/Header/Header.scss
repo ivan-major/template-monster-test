@@ -1,0 +1,205 @@
+@import "../../style/mixins";
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    &__container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: #020727;
+
+        border-radius: 0 0 20px 20px;
+    }
+
+    &__home {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 5px;
+
+        text-transform: uppercase;
+
+        border-radius: 10px;
+
+        background-color: #fff;
+        color: #020727;
+
+        &:hover {
+            outline: 1px solid #fff;
+            color: #fff;
+            background-color: #020727;
+        }
+    }
+}
+
+.favorite {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__icon {
+        width: 34px;
+        height: 34px;
+        position: relative;
+
+        margin-right: 10px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__count {
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+        outline: 1px solid #020727;
+        background-color: #fff;
+
+        font-size: 14px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
+
+.limit {
+    &_disable {
+        display: none;
+    }
+
+    &__text {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+
+        margin-right: 10px;
+    }
+
+    select {
+        font-size: 18px;
+    }
+}
+
+@include onTablet {
+    .header {
+        &__container {
+            padding: 30px;
+
+            border-radius: 0 0 30px 30px;
+        }
+
+        &__home {
+            font-size: 24px;
+            padding: 10px;
+
+            border-radius: 20px;
+        }
+    }
+
+    .favorite {
+        &__icon {
+            width: 40px;
+            height: 40px;
+
+            margin-right: 20px;
+        }
+
+        &__count {
+            width: 20px;
+            height: 20px;
+
+            font-size: 18px;
+        }
+
+        &__text {
+            font-size: 24px;
+        }
+    }
+
+    .limit {
+        display: flex;
+
+        &__text {
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        select {
+            font-size: 24px;
+        }
+    }
+}
+
+@include onDesktop {
+    .header {
+        &__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+
+            border-radius: 0 0 40px 40px;
+        }
+
+        &__home {
+            font-size: 28px;
+            padding: 15px;
+
+            border-radius: 25px;
+        }
+    }
+
+    .favorite {
+        &__icon {
+            width: 50px;
+            height: 50px;
+
+            margin-right: 20px;
+        }
+
+        &__count {
+            width: 25px;
+            height: 25px;
+
+            font-size: 20px;
+        }
+
+        &__text {
+            font-size: 28px;
+        }
+    }
+
+    .limit {
+        &__text {
+            font-size: 28px;
+            margin-right: 24px;
+        }
+
+        select {
+            font-size: 28px;
+        }
+    }
+}
